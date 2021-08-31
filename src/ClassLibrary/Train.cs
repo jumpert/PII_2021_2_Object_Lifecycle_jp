@@ -13,6 +13,24 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
+        public Train(string identificador)
+        {
+            this.IdentificadorTrenes = identificador;
+            Train.count++;
+            
+        }
+        public string IdentificadorTrenes {get; set;}
+        public static int Contador 
+        {
+            get 
+            { 
+                return Train.count;
+            }
+        
+        }
+        private static int count = 0;
+
+
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
@@ -38,6 +56,8 @@ namespace ClassLibrary
             return true;
         }
 
+        
+        
         /// <summary>
         /// Detiene las máquinas del tren.
         /// </summary>
